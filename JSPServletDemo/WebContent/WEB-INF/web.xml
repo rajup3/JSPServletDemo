@@ -4,15 +4,6 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <servlet-name>LoginController</servlet-name>
-    <servlet-class>rp3.servlet.LoginController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>LoginController</servlet-name>
-    <url-pattern>/login</url-pattern>
-  </servlet-mapping>
-  
   <env-entry>
 	<description>Administrator Email Id</description>
 	<env-entry-name>ADMIN_EMAIL_ID</env-entry-name>
@@ -21,7 +12,41 @@
   </env-entry>
   
   <listener>
-  	<listener-class>rp3.servlet.EmailListener</listener-class>
+  	<display-name>Email Listener</display-name>
+  	<listener-class>rp3.EmailListener</listener-class>
   </listener>
+  <filter>
+  	<filter-name>ClientCheckFilter</filter-name>
+  	<filter-class>rp3.ClientCheckFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>ClientCheckFilter</filter-name>
+  	<servlet-name>LoginController</servlet-name>
+  </filter-mapping>
+  
+  <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>rp3.servlet.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FromGet</servlet-name>
+    <jsp-file>/views/FromGet.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FromGet</servlet-name>
+    <url-pattern>/fromget</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FromPost</servlet-name>
+    <jsp-file>/views/FromPost.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FromPost</servlet-name>
+    <url-pattern>/frompost</url-pattern>
+  </servlet-mapping>
   
 </web-app>
