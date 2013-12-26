@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>JSPServletDemo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>rp3.servlet.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <env-entry>
+	<description>Administrator Email Id</description>
+	<env-entry-name>ADMIN_EMAIL_ID</env-entry-name>
+	<env-entry-type>java.lang.String</env-entry-type>
+	<env-entry-value>admin@emailtest.com</env-entry-value>
+  </env-entry>
+  
+  <listener>
+  	<listener-class>rp3.servlet.EmailListener</listener-class>
+  </listener>
+  
+</web-app>
