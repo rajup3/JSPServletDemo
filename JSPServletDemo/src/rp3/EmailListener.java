@@ -7,11 +7,11 @@ public class EmailListener implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent arg0) {
-		System.out.println(" EmailListener.init() ..  ");
+		System.out.println(" EmailListener.contextInitialized() ..  ");
 	}
 
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
-		System.out.println(" contextDestroyed.destroy() ..  ");
+		System.out.println(" EmailListener.contextDestroyed() ..  ");
 	}
 }

@@ -5,9 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>From Get method</title>
+<script type="text/javascript">
+function commonAction(action){
+	window.document.FromGetForm.action = action;
+	window.document.FromGetForm.submit();
+}
+</script>
 </head>
 <body>
-	<h1>GET:</h1>
-	<h2><%= request.getAttribute("MESSAGE")+" "+request.getAttribute("USER_ID") %></h2>
+	<form name='FromGetForm'>
+		<h1>GET:</h1>
+		<h2><%= request.getAttribute("MESSAGE")+" "+request.getAttribute("USER_ID") %></h2>
+		<a href="javascript: commonAction('index')">Home</a>
+	</form>
 </body>
 </html>

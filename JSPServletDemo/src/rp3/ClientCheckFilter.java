@@ -25,6 +25,8 @@ public class ClientCheckFilter implements Filter{
 
 	     // Log the IP address and current timestamp.
 	     System.out.println("IP "+ ipAddress + ", Time "+ new Date().toString());
+	     
+	     filterChain.doFilter(request, response);
 	}
 	
 	@Override

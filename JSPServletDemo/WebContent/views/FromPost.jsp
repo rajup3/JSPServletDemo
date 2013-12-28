@@ -4,10 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src='Common.js' language="javascript"></script>
+<script type="text/javascript">
+function commonAction(action){
+	window.document.FromPostForm.action = action;
+	window.document.FromPostForm.submit();
+}
+</script>
 <title>From Get method</title>
 </head>
 <body>
-	<h1>POST:</h1>
-	<h2><%= request.getAttribute("MESSAGE")+" "+request.getAttribute("USER_ID") %></h2>
+	<form name="FromPostForm">
+		<input type="hidden" name="FormName" value="FromPostForm">
+		<h1>POST:</h1>
+		<h2><%= request.getAttribute("MESSAGE")+" "+request.getAttribute("USER_ID") %></h2>
+		<a href="javascript: commonAction('index')">Home</a>
+	
+	</form>
 </body>
 </html>
